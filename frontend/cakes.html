@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakes - Grand Dessert Palace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="./photos/favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Grand Dessert Palace</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cakes.html">Cakes</a></li>
+                    <li><a href="ice-creams.html">Ice Creams</a></li>
+                    <li><a href="food.html">Food</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="headerIcons">
+            <div id="searchDiv">
+                <img onclick="searchCake()" class="headericn" src="./photos/search icon.png" alt="search">
+                <input id="searchCake" type="text" placeholder="Search items">
+            </div>
+
+            <div id="accountDiv">
+                <img onclick="updateAccount()" class="headericn" src="./photos/update account.png" alt="update account">
+                <img onclick="signOut()" class="headericn" src="./photos/logout icon.png" alt="logout">
+            </div>
+        </div>
+    </header>
+
+    <section id="cakes" class="products">
+        <div class="container">
+            <div class="container-header">
+                <div class="empty"></div>
+                <div>
+                    <img class="icon" src="./photos/cake icon.png" alt="Cake icon" />
+                    <h2>Our Cakes</h2>
+                </div>
+                <a class="ViewCart" href="view-cart.html">
+                    <img onclick="viewcart()" class="ViewCart" id="cartImg" src="./photos/Shoping cart.png"
+                        alt="View cart">
+                </a>
+                <a class="OrderNow" href="login-signin.html">
+                    <img class="OrderNow" id="orderNowImg" src="./photos/Order now icon.png" alt="">
+                </a>
+            </div>
+
+            <div class="product-list"></div> <!-- Empty for dynamic content -->
+        </div>
+    </section>
+
+    <div id="goToTop">
+        <img onclick="goToTop()" src="./photos/BackToTop.png" alt="">
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Grand Dessert Palace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="cakes.js"></script>
+</body>
+
+</html>

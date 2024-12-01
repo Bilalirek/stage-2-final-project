@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Cart</title>
+    <link rel="stylesheet" href="view-cart.css">
+</head>
+
+<body>
+    <header>
+        <h1>your Shopping Cart</h1>
+    </header>
+
+    <main>
+        <section id="cart-summary">
+            <div class="cart-item">
+                <div class="cart-item-image">
+                </div>
+                <div class="cart-item-details">
+                    <p class="product-name"></p>
+                    <p class="product-price"></p>
+                    <p class="quantity-text"><span id="itemQuantity "></span></p>
+                    <p class="total-price"></p>
+                </div>
+            </div>
+
+
+
+            <!--  items will be dynamically inserted here -->
+        </section>
+
+        <section id="cart-totals">
+            <h3>Cart Total</h3>
+            <p id="CartTotal">Total: $0.00</p>
+            <button onclick="checkOut()" id="checkout-button">Proceed to Checkout</button>
+            <button onclick="ContinueShopping()" id="continue-shopping">Continue Shopping</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Grand Dessert Palace. All rights reserved.</p>
+    </footer>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+
+</html>

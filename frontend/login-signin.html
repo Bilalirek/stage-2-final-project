@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Management</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" href="photos/favicon-32x32.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login Page -->
+        <div class="form-container" id="login-form">
+            <h2>Login</h2>
+            <form id="login-form-element">
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" name="username" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" required>
+                <button onclick="signin()" type="button">Login</button>
+                <p><a href="#forgot-password-form" onclick="showForm('forgot-password-form')">Forgot Password?</a></p>
+                <p>Don't have an account? <a href="#create-account-form"
+                        onclick="showForm('create-account-form')">Create one</a></p>
+            </form>
+        </div>
+
+        <!-- Create Account Page -->
+        <div class="form-container" id="create-account-form" style="display: none;">
+            <h2>Create Account</h2>
+            <form id="register-form-element">
+                <label for="create-username">Username:</label>
+                <input type="text" id="create-username" name="username" required>
+                <label for="create-email">Email:</label>
+                <input type="email" id="create-email" name="email" required>
+                <label for="create-password">Password:</label>
+                <input type="password" id="create-password" name="password" required>
+                <button onclick="signup()" type="button">Create Account</button>
+                <p>Already have an account? <a href="#login-form" onclick="showForm('login-form')">Login</a></p>
+            </form>
+        </div>
+
+        <!-- Forgot Password Page -->
+        <div class="form-container" id="forgot-password-form" style="display: none;">
+            <h2>Forgot Password</h2>
+            <form id="forgot-password-form-element">
+                <label for="forgot-email">Email:</label>
+                <input type="email" id="forgot-email" name="email" required>
+                <button onclick="forgotpassword()" type="button">Reset Password</button>
+                <p>Remembered your password? <a href="#login-form" onclick="showForm('login-form')">Login</a></p>
+            </form>
+        </div>
+
+        <!-- Update Account Page -->
+        <div class="form-container" id="update-account-form" style="display: none;">
+            <h2>Update Account</h2>
+            <form id="update-account-form-element">
+                <label for="update-username">Username:</label>
+                <input type="text" id="update-username" name="username" required>
+                <label for="update-email">Email:</label>
+                <input type="email" id="update-email" name="email" required>
+                <label for="update-password">New Password:</label>
+                <input type="password" id="update-password" name="password" required>
+                <button onclick="updateAccount()" type="button">Update Account</button>
+                <p>Need to <a href="#login-form" onclick="showForm('login-form')">Login</a> again?</p>
+            </form>
+        </div>
+        <div class="form-container" id="reset-password-form" style="display: none;">
+            <h2>Reset Password</h2>
+            <form id="reset-password-form-element">
+                <label for="reset-token">Reset Token:</label>
+                <input type="text" id="reset-token" name="token" required>
+                <label for="new-password">New Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+                <button type="button" onclick="resetPassword()">Reset Password</button>
+                <p>Need to <a href="#login-form" onclick="showForm('login-form')">Login</a> again?</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./users.js"></script>
+</body>
+
+</html>
